@@ -11,29 +11,26 @@
     
     <div class="container">
         <div class="box">
-          <h1>BMI Calculator</h1>
-          <div class="content">
+                <h1>BMI Calculator</h1>
+                    <div class="content">
+                        <div class="text1">
+                            <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, beran badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk,hitung sekarang di kalkulator BMI</p>
+                        </div>
+                        <div class="input">
+                            <label for="height">Age</label>
+                            <input type="text" class="text-input" id="age" autocomplete="off" required/>
+                        </div>
+                        <div class="gender">
+                            <label class="container">
+                                <input type="radio" name="radio" id="m"><p class="text">Male</p>
+                                <span class="checkmark"></span>
+                            </label>
 
-
-            <div class="input">
-                <label for="height">Age</label>
-                <input type="text" class="text-input" id="age" autocomplete="off" required/>
-            </div>
-
-            <div class="gender">
-
-                <label class="container">
-                    <input type="radio" name="radio" id="m"><p class="text">Male</p>
-                    <span class="checkmark"></span>
-                  </label>
-
-
-                <label class="container">
-                    <input type="radio" name="radio" id="f" ><p class="text">Female</p>
-                      <span class="checkmark"></span>
-                    </label>
-
-            </div>
+                            <label class="container">
+                                <input type="radio" name="radio" id="f" ><p class="text">Female</p>
+                                <span class="checkmark"></span>
+                                </label>
+                        </div>
 
             <div class="containerHW">
             <div class="inputH">
@@ -46,24 +43,18 @@
               <input type="number" id="weight" required>
             </div>
           </div>
-
+          <div class="boxbutton">
             <button class="calculate" id="submit" onclick="calculate();">Calculate BMI</button>
             <button class="reset" id="reset" onclick="resetForm();">Reset</button>
-          </div>
-          <div class="result">
+        </div>
+        <div class="result">
             <p>BMI KAMUU!!</p>
             <div id="result">00.00</div>
             <p class="comment"></p>
-          </div> 
+            </div>
+          </div>
         </div>
-      </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p id="modalText"></p>
-    </div></div>
+    </div>
 <script src="js/scripts.js"></script>
 
 </body>
