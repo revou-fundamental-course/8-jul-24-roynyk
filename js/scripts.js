@@ -1,77 +1,59 @@
-// ini js
-var age = document.getElementById("age");
-var height = document.getElementById("height");
-var weight = document.getElementById("weight");
-var male = document.getElementById("m");
-var female = document.getElementById("f");
-var form = document.getElementById("form");
-let resultArea = document.querySelector(".comment");
+// Mendefinisikan konstanta untuk elemen input dan hasil
+const tinggiBadan = document.getElementById('input-tinggi-badan');
+const usia = document.getElementById('input-usia');
+const beratBadan = document.getElementById('input-berat-badan');
+const hasilBmiElement = document.querySelector('.hasil-bmi');
+const kategoriBmiElement = document.querySelector('.kategori-bmi');
+const dataUserElement = document.querySelector('.data-user .usia');
+const jenisKelaminElement = document.querySelector('.data-user .jenis-kelamin');
 
-modalContent = document.querySelector(".modal-content");
-modalText = document.querySelector("#modalText");
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-
-
-function calculate(){
- 
-  if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
-    modal.style.display = "block";
-    modalText.innerHTML = `All fields are required!`;
-
-  }else{
-    countBmi();
-  }
-
+// Fungsi untuk mengklasifikasikan BMI
+function klasifikasiBmi(bmi) {
+    if (bmi < 18.5) {
+        return "Kekurangan Berat Badan";
+    } else if (bmi < 25) {
+        return "Normal (Ideal)";
+    } else if (bmi < 30) {
+        return "Kelebihan Berat Badan";
+    } else {
+        return "Kegemukan (Obesitas)";
+    }
 }
 
+// Fungsi untuk menghitung BMI dan menampilkan hasil pada halaman
+function hitungBmi(event) {
+    event.preventDefault(); // Mencegah form dari submit secara default
 
-function countBmi(){
-  var p = [age.value, height.value, weight.value];
-  if(male.checked){
-    p.push("male");
-  }else if(female.checked){
-    p.push("female");
-  }
+    // Mengambil nilai dari input dan mengubahnya ke tipe data yang sesuai
+    const tbad = parseFloat(tinggiBadan.value) / 100;
+    const bbad = parseFloat(beratBadan.value);
+    const usi = parseInt(usia.value, 10);
+    const jenisKelamin = document.querySelector('input[name="jeniskelamin"]:checked');
 
-  var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
-      
-  var result = '';
-  if(bmi<18.5){
-    result = 'Kekurangan Berat badan';
-     }else if(18.5<=bmi&&bmi<=24.9){
-    result = 'Normal';
-     }else if(25<=bmi&&bmi<=29.9){
-    result = 'Kelebihan Berat Badan';
-     }else if(30<=bmi&&bmi<=34.9){
-    result = 'Kegemukan';
-     }else if(35<=bmi){
-    result = 'HARUS DIET SEKARANG!!';
-     }
+    // Validasi input
+    if (isNaN(tbad) || isNaN(bbad) || isNaN(usi) || tbad > 3 || bbad > 200 || !jenisKelamin) {
+        alert('Pastikan semua input terisi dengan benar');
+        return;
+    }
 
-resultArea.style.display = "block";
-document.querySelector(".comment").innerHTML = `Kamu <span id="comment">${result}</span>`;
-document.querySelector("#result").innerHTML = bmi.toFixed(2);
+    // Menghitung BMI
+    let bmi = bbad / (tbad * tbad);
+    bmi = bmi.toFixed(1);
 
+    // Menampilkan hasil BMI dan data pengguna pada halaman
+    hasilBmiElement.textContent = bmi;
+    kategoriBmiElement.textContent = `${klasifikasiBmi(parseFloat(bmi))}`;
 }
 
+// Fungsi untuk mereset form dan hasil BMI
 function resetForm() {
-  document.getElementById("age").value = '';
-  document.getElementById("height").value = '';
-  document.getElementById("weight").value = '';
-  document.getElementById("m").checked = false;
-  document.getElementById("f").checked = false;
-  document.querySelector(".comment").innerHTML = '';
-  document.querySelector("#result").innerHTML = '00.00';
-  resultArea.style.display = "none";
+    // Mereset form input
+    document.getElementById('bmi-form').reset();
+    // Mengembalikan nilai hasil BMI dan kategori ke default
+    hasilBmiElement.textContent = '0.0';
+    kategoriBmiElement.textContent = '';
 }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// Event listener untuk tombol submit dan reset
+document.getElementById('bmi-form').addEventListener('submit', hitungBmi);
+document.getElementById('reset-button').addEventListener('click', resetForm);

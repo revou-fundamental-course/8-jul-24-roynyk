@@ -1,341 +1,120 @@
-/* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    }
-    
-    body{
+/* import font dari google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Mengatur font utama untuk seluruh elemen */
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Mengatur background color keseluruhan halaman */
+html {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Mengatur layout utama sebagai flex container */
+.content-utama {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: rgba(130, 244, 156, 0.9);
-    }
-/* 
-  .container {
-    min-width: 250px;
-  } */
-
-  .box {
-    width: 801px;
-    background: #fafafa;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 2px 2px 20px 5px rgba(0,0,0,0.5);
-  }
-
-
-  h1 {
-    color: rgb(0, 0, 0, 0.7);
-    font-weight: bold;
-    font-size: 36px;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    
-  }
-
-  .text1{
-    padding: 20px 0;
-  }
-
-  .boxbutton{
-    padding-bottom: 20px;
-  }
-
-
-    
-    .content {
-        padding: 0 30px;
-        
-    }
-    
-    .input {
-        background: #fff;
-        box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-        border-radius: 12px;
-        padding: 20px 0;
-        margin-bottom: 20px;
-    }
-
-    
-    .input label {
-        display: block;
-        font-size: 18px;
-        font-weight: 600;
-        color: #000;
-        margin-bottom: 20px;
-    }
-    .input input {
-        outline: none;
-        border: none;
-        border-bottom: 1px solid #4f7df9;
-        width: 50%;
-        text-align: center;
-        font-size: 28px;
-        font-family: "Nunito", sans-serif;
-    }
-
-
-    
-    .inputW {
-        background: #fff;
-        box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-        border-radius: 12px;
-        padding: 10px 0;
-        margin-bottom: 20px;
-    }
-
-
-    .inputW label {
-        display: block;
-        font-size: 18px;
-        font-weight: 600;
-        color: #000;
-        margin-bottom: 20px;
-    }
-   .inputW input {
-        outline: none;
-        border: none;
-        border-bottom: 1px solid #4f7df9;
-        width: 50%;
-        text-align: center;
-        font-size: 28px;
-        font-family: "Nunito", sans-serif;
-    }
-
-    .inputH {
-        background: #fff;
-        box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-        border-radius: 12px;
-        padding: 10px 0;
-        margin-bottom: 20px;
-        margin-right: 20px;
-    }
-
-
-    .inputH label {
-        display: block;
-        font-size: 18px;
-        font-weight: 600;
-        color: #000;
-        margin-bottom: 20px;
-    }
-   .inputH input {
-        outline: none;
-        border: none;
-        border-bottom: 1px solid #4f7df9;
-        width: 50%;
-        text-align: center;
-        font-size: 28px;
-        font-family: "Nunito", sans-serif;
-    }
-
-  
-button.calculate {
-    cursor: pointer;
-    font-family: "Nunito", sans-serif;
-    color: #fff;
-    background: rgb(48, 222, 83);
-    font-size: 16px;
-    border-radius: 7px;
-    padding: 12px 0;
-    width: 100%;
-    outline: none;
-    border: none;
-    transition: all 0.5s;
-    
-  }
-  button.calculate:hover {
-    background: #23a8af;
-    transform: scale(1.1)translateY(-5px);
-  }
-
-  button.reset {
-    cursor: pointer;
-    font-family: "Nunito", sans-serif;
-    color: #fff;
-    background: rgb(255, 81, 50);
-    font-size: 16px;
-    border-radius: 7px;
-    padding: 12px 0;
-    width: 100%;
-    outline: none;
-    border: none;
-    transition: all 0.5s;
-    margin-top: 10px;
-}
-button.reset:hover {
-    background: #27b3a3;
-    transform: scale(1.1)translateY(-5px);
+    flex-direction: row;
+    padding: 30px;
 }
 
-
-  
-  
-.result {
-    padding: 10px 20px;
-  }
-  .result p {
-    font-weight: 600;
-    font-size: 22px;
-    color: #000;
-    margin-bottom: 15px;
-  }
-  .result #result {
-    font-size: 36px;
-    font-weight: 900;
-    color: #4f7df9;
-    background-color: #eaeaea;
-    display: inline-block;
-    padding: 7px 20px;
-    border-radius: 55px;
-    margin-bottom: 25px;
-  }
-  #comment {
-    color: #4f7df9;
-    font-weight: 800;
-  }
-
-.comment {
-    display: none;
-    border: dashed 1px;
-    border-radius: 7px;
-    padding: 5px;
+/* Mengatur align text menjadi justify untuk paragraf */
+p {
+    text-align: justify;
 }
 
-.footer {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 10px 15px
+.text-pertama {
+    text-align: justify;
 }
 
-.footer-text {
-    text-decoration: none;
-    color: rgba(40, 40, 40, 0.8);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 200;
-    font-size: 14px;
-    transition: all 0.5;
+/* Mengatur styling bagian kiri dan kanan konten */
+.bagian-kiri {
+    width: 50%;
+    padding: 30px;
 }
 
-.footer-text:hover {
-    color: rgba(40, 40, 40, 1);
+.bagian-kanan {
+    width: 50%;
+    padding: 30px;
 }
 
-.gender {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    background: #fff;
-    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    padding: 20px 0;
+/* Mengatur styling untuk form input, hasil, tabel, dan button */
+.form-section {
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-  /* Style for Radio */
-.gender .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    /* margin-bottom: 12px; */
-    margin-top: 7px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default radio button */
-  .gender .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .gender .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .gender .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .gender .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .gender .container .checkmark:after {
-       top: 9px;
-      left: 9px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: white;
-  }
-  /* END Style for Radio */
+/* Styling untuk input number */
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
-.containerHW {
-    display: flex;
-    justify-content: space-around;
+/* Styling untuk button */
+button {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    transform: scale(0.9)translateY(-5px);
+    background-color: cadetblue;
+}
+
+/* Styling untuk form input container */
+.form-input {
+    background-color: rgb(200, 200, 200);
+    padding: 20px;
+}
+
+/* Styling untuk hasil BMI container */
+.box-hasil {
+    background-color: rgb(200, 200, 200);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Mengatur flex container menjadi kolom pada layar kecil (mobile) */
+@media (max-width: 600px) {
+    .content-utama {
+      flex-direction: column;
+    }
+    .bagian-kiri {
+        width: 100%;
+        padding: 0;
+    }
+    .bagian-kanan {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Styling untuk elemen hasil BMI */
+.hasil-bmi {
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling untuk tabel BMI */
+.tabel-bmi {
+    width: 100%;
+    height: 150px;
+    margin: none;
+    padding: 10px;
     align-items: center;
-}
-  
-
-
-
-
-
-@media (max-width: 700px){
-
-
-    .box {
-        width: 380px;
-    }
-    
-    .input label {
-
-        font-size: 18px;
-    }
-
-    .inputH label, .inputW label {
-        font-size: 14px;
-    }
-
-
-    .input input, .inputH input, .inputW input{
-        font-size: 24px;
-    }
-
-
+    text-align: center;
+    background-color: rgb(200, 200, 200);
 
 }
+
