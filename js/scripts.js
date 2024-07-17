@@ -46,7 +46,7 @@ function countBmi(){
      }else if(30<=bmi&&bmi<=34.9){
     result = 'Kegemukan';
      }else if(35<=bmi){
-    result = 'HARUS DIET SEKARANG!!!';
+    result = 'HARUS DIET SEKARANG!!';
      }
 
 resultArea.style.display = "block";
